@@ -6,6 +6,7 @@ import java.util.List;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.mukri.auth.commands.RegisterCmd;
+import com.mukri.auth.listeners.JoinEvents;
 import com.mukri.auth.listeners.MoveEvents;
 
 
@@ -26,6 +27,8 @@ public class Mauth extends JavaPlugin {
 		
 		listen();
 		commands();
+		
+		saveConfig();
 	}
 	
 	public void onDisable() {
@@ -42,5 +45,6 @@ public class Mauth extends JavaPlugin {
 	
 	public void listen() {
 		getServer().getPluginManager().registerEvents(new MoveEvents(this), this);
+		getServer().getPluginManager().registerEvents(new JoinEvents(this), this);
 	}
 }

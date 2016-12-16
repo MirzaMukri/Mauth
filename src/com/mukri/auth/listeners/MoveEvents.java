@@ -32,6 +32,7 @@ public class MoveEvents implements Listener {
 				loc.setPitch(e.getTo().getPitch());
 				loc.setYaw(e.getTo().getYaw());
 				p.teleport(loc);
+				p.sendMessage("//YOU HAVE TO LOG IN FIRST");
 			}
 		}
 	}
