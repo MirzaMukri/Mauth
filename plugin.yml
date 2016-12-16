@@ -1,0 +1,8 @@
+name: Mauth
+version: 1.0
+main: com.mukri.auth.Mauth
+author: DoomGary
+description: Mauth by Mukri
+commands:
+  register:
+    description: Register.
