@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 
 import com.mukri.auth.Mauth;
 import com.mukri.auth.files.PlayerData;
-import com.mukri.auth.security.Base64Converter;
+import com.mukri.auth.security.Base64Con;
 
 /**
  * CopyRighted by DoomGary / Mukri
@@ -67,7 +67,7 @@ public class RegisterCmd implements CommandExecutor {
 			
 			else if(args[0].equalsIgnoreCase("test")) {
 				try {
-					String base = Base64Converter.stringToBase("Doom");
+					String base = Base64Con.stringToBase("Doom");
 					p.sendMessage("Base: " + base);
 				} catch (UnsupportedEncodingException e) {
 					e.printStackTrace();
@@ -76,7 +76,7 @@ public class RegisterCmd implements CommandExecutor {
 			
 			else if(args[0].equalsIgnoreCase("testo")) {
 				try {
-					String base = Base64Converter.baseToString("RG9vbQ==");
+					String base = Base64Con.baseToString("RG9vbQ==");
 					
 					p.sendMessage("NotBase: " + base);
 				} catch (UnsupportedEncodingException e) {

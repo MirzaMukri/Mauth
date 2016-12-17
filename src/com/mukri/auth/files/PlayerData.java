@@ -9,7 +9,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import com.mukri.auth.Mauth;
-import com.mukri.auth.security.Base64Converter;
+import com.mukri.auth.security.Base64Con;
 
 
 /**
@@ -63,7 +63,7 @@ public class PlayerData {
 	}
 
 	public void setPassword(String password) throws UnsupportedEncodingException {
-		String encoded = Base64Converter.stringToBase(password);
+		String encoded = Base64Con.stringToBase(password);
 
 		config.set("Password", encoded);
 	}

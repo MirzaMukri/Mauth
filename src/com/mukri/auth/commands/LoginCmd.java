@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 
 import com.mukri.auth.Mauth;
 import com.mukri.auth.files.PlayerData;
-import com.mukri.auth.security.Base64Converter;
+import com.mukri.auth.security.Base64Con;
 
 
 /**
@@ -37,7 +37,7 @@ public class LoginCmd implements CommandExecutor {
 			else if(args.length == 1) {
 				try {
 					String password = args[0];
-					String storedPass = Base64Converter.baseToString(data.getPassword());
+					String storedPass = Base64Con.baseToString(data.getPassword());
 					
 					if(password.equals(storedPass)) {
 						if(Mauth.getIns().notLogged.contains(p.getName())) {

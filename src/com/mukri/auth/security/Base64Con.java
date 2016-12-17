@@ -8,10 +8,10 @@ import javax.xml.bind.DatatypeConverter;
 /**
  * CopyRighted by DoomGary / Mukri
  * Please do not edit or copy without permissions.
- * Made on: 1:49:58 AM 
+ * Made on: 12:52:53 PM 
  */
 
-public class Base64Converter {
+public class Base64Con {
 	
 	public static String stringToBase(String password) throws UnsupportedEncodingException {
 		byte[] msg = password.getBytes("UTF-8");
