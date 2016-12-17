@@ -64,7 +64,11 @@ public class SettingsData {
 			config.addDefault("Login.Kick-If-Pass-Wrong", true);
 			config.addDefault("Login.Commands-Allow", new ArrayList<>());	
 			config.addDefault("Login.Allow-Chat", false);
-			
+			config.addDefault("Message.Login", "PLEASE LOGIN /LOGIN");
+			config.addDefault("Message.Register", "PLEASE REGISTER /REGISTER");
+			config.addDefault("Message.Kicked-Too-Much-Attempt", "YOU HAVE BEEN KICKED REASON: TOO MUCH ATTEMPT");
+			config.addDefault("Message.Kicked-Time-Limit", "YOU HAVE BEEN KICKED REASON: TIME ENDS!");
+			config.addDefault("Message.Successfull-Login", new ArrayList<>());
 			
 			save();
 			

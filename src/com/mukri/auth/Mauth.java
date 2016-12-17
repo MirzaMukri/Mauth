@@ -1,10 +1,13 @@
 package com.mukri.auth;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.mukri.auth.commands.LoginCmd;
@@ -27,6 +30,8 @@ public class Mauth extends JavaPlugin {
 	
 	public List<String> notLogged = new ArrayList<>();
 	public List<String> notRegistered = new ArrayList<>();
+	public Map<Player, ItemStack[]> inventory = new HashMap<>();
+	public Map<Player, ItemStack[]> armor = new HashMap<>();
 	
 	public SettingsData settings = new SettingsData();
 

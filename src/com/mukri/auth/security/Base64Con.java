@@ -5,10 +5,11 @@ import java.io.UnsupportedEncodingException;
 import javax.xml.bind.DatatypeConverter;
 
 
+
 /**
  * CopyRighted by DoomGary / Mukri
  * Please do not edit or copy without permissions.
- * Made on: 12:52:53 PM 
+ * Made on: 4:11:31 PM 
  */
 
 public class Base64Con {
