@@ -6,3 +6,5 @@ description: Mauth by Mukri
 commands:
   register:
     description: Register.
+  login:
+    description: Login.

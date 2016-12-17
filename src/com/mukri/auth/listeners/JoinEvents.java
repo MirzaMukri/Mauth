@@ -36,10 +36,16 @@ public class JoinEvents implements Listener {
 				plugin.notLogged.add(p.getName());
 				p.sendMessage("//YOU HAVE TO LOG IN FIRST");
 			}
+			
+			if(data.getPassword().equals("none")) {
+				plugin.notRegistered.add(p.getName());
+			}
 		} else {
 			data.createPlayer(p);
 			plugin.notLogged.add(p.getName());
 			p.sendMessage("//YOU HAVE TO LOG IN FIRST");
+			
+			plugin.notRegistered.add(p.getName());
 		}
 	}
 	

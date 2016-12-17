@@ -67,6 +67,10 @@ public class PlayerData {
 
 		config.set("Password", encoded);
 	}
+	
+	public String getPassword() {
+		return config.getString("Password");
+	}
 
 	public String getLastIp() {
 		return config.getString("Ip-Logged");
