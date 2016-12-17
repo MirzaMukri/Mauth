@@ -9,6 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.mukri.auth.commands.LoginCmd;
 import com.mukri.auth.commands.RegisterCmd;
+import com.mukri.auth.files.SettingsData;
 import com.mukri.auth.listeners.BreakPlaceEvent;
 import com.mukri.auth.listeners.JoinEvents;
 import com.mukri.auth.listeners.MoveEvents;
@@ -27,6 +28,9 @@ public class Mauth extends JavaPlugin {
 	public List<String> notLogged = new ArrayList<>();
 	public List<String> notRegistered = new ArrayList<>();
 	
+	public SettingsData settings = new SettingsData();
+
+	
 	public void onEnable() {
 		instance = this;
 		
@@ -34,6 +38,10 @@ public class Mauth extends JavaPlugin {
 		commands();
 		
 		reminderMsg();
+				
+		if(!settings.isExists()) {
+			settings.addDefaullt();
+		}
 		
 		saveConfig();
 	}
