@@ -9,6 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.mukri.auth.commands.LoginCmd;
 import com.mukri.auth.commands.RegisterCmd;
+import com.mukri.auth.listeners.BreakPlaceEvent;
 import com.mukri.auth.listeners.JoinEvents;
 import com.mukri.auth.listeners.MoveEvents;
 
@@ -53,6 +54,7 @@ public class Mauth extends JavaPlugin {
 	public void listen() {
 		getServer().getPluginManager().registerEvents(new MoveEvents(this), this);
 		getServer().getPluginManager().registerEvents(new JoinEvents(this), this);
+		getServer().getPluginManager().registerEvents(new BreakPlaceEvent(this), this);
 	}
 	
 	public void reminderMsg() {
