@@ -6,6 +6,7 @@ With full configurations and mysql support.
 (More comming soon)
 
 Commands: -/-
+
 Permissions: -/-
 
 Download Link: -/-

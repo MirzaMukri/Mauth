@@ -11,7 +11,6 @@ import com.mukri.auth.Mauth;
 import com.mukri.auth.files.PlayerData;
 import com.mukri.auth.security.Base64Converter;
 
-
 /**
  * CopyRighted by DoomGary / Mukri
  * Please do not edit or copy without permissions.
