@@ -51,7 +51,7 @@ public class SettingsData {
 			
 			file.createNewFile();
 			
-			config.set("Type", "YAML");
+			config.set("Storage-Type", "YAML");
 			config.set("Secure-Inventory", false);
 			config.set("Add-Blindness", true);
 			
@@ -59,7 +59,7 @@ public class SettingsData {
 			config.set("mySQL.Port", "3306");
 			config.set("mySQL.Username", "mauth");
 			config.set("mySQL.Password", "mauthpassword");
-			config.set("mySQL.Table", "mauthtable");
+			config.set("mySQL.Database", "mauthtable");
 			
 			config.set("Gamemode.Force-Survival", true);
 			config.set("Gamemode.Clear-If-Creative", false);
@@ -78,7 +78,7 @@ public class SettingsData {
 			config.set("Message.Kicked-Time-Limit", "&a&lMAUTH &7YOU HAVE BEEN KICKED\n &cREASON: &7TIME ENDS!");
 			config.set("Message.Successfull-Login", "&a&lMAUTH &7You successfully logged in!");
 			config.set("Message.Successfull-Register", "&a&lMAUTH &7You set your password to &a{PASSWORD}");
-			config.set("Message.Error-Lenght", "&a&lMAUTH &7Your password have to be longer than 5!");
+			config.set("Message.Error-Length", "&a&lMAUTH &7Your password have to be longer than 5!");
 			config.set("Message.Error-Invalid", "&a&lMAUTH &7Your are not allowed to use that password!");
 			
 			save();
@@ -86,5 +86,25 @@ public class SettingsData {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public String getMysqlIp() {
+		return config.getString("mySQL.Host");
+	}
+	
+	public String getMysqlPort() {
+		return config.getString("mySQL.Port");
+	}
+	
+	public String getMysqlUser() {
+		return config.getString("mySQL.Username");
+	}
+	
+	public String getMysqlPassword() {
+		return config.getString("mySQL.Password");
+	}
+	
+	public String getMysqlDatabase() {
+		return config.getString("mySQL.Database");
 	}
 }

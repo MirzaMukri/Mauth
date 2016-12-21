@@ -16,6 +16,7 @@ import com.mukri.auth.files.SettingsData;
 import com.mukri.auth.listeners.BreakPlaceEvent;
 import com.mukri.auth.listeners.JoinEvents;
 import com.mukri.auth.listeners.MoveEvents;
+import com.mukri.auth.mysql.MySql;
 
 
 /**
@@ -34,6 +35,7 @@ public class Mauth extends JavaPlugin {
 	public Map<Player, ItemStack[]> armor = new HashMap<>();
 	
 	public SettingsData settings = new SettingsData();
+	public MySql sql;
 
 	
 	public void onEnable() {
@@ -47,6 +49,9 @@ public class Mauth extends JavaPlugin {
 		if(!settings.isExists()) {
 			settings.addDefaullt();
 		}
+		
+		sql = new MySql(settings.getMysqlIp(), settings.getMysqlPort(), settings.getMysqlDatabase(), settings.getMysqlUser(), settings.getMysqlPassword());
+		//TODO Add sql.createTable();
 		
 		saveConfig();
 	}
