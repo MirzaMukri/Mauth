@@ -12,6 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.mukri.auth.commands.LoginCmd;
 import com.mukri.auth.commands.RegisterCmd;
+import com.mukri.auth.files.MessageData;
 import com.mukri.auth.files.SettingsData;
 import com.mukri.auth.listeners.BreakPlaceEvent;
 import com.mukri.auth.listeners.JoinEvents;
@@ -34,6 +35,7 @@ public class Mauth extends JavaPlugin {
 	public Map<Player, ItemStack[]> armor = new HashMap<>();
 	
 	public SettingsData settings = new SettingsData();
+	public MessageData message = new MessageData();
 
 	
 	public void onEnable() {

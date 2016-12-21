@@ -22,7 +22,7 @@ public class SettingsData {
 	FileConfiguration config;
 	
 	public SettingsData() {
-		file = new File(Mauth.getIns().getDataFolder() + "settings.yml");
+		file = new File(Mauth.getIns().getDataFolder(), "settings.yml");
 		config = YamlConfiguration.loadConfiguration(file);
 	}
 	
@@ -44,26 +44,34 @@ public class SettingsData {
 	
 	public void addDefaullt() {
 		try {
+			
+			if(!file.getParentFile().exists()) {	
+				file.getParentFile().mkdirs();
+			}
+			
 			file.createNewFile();
 			
 			config.addDefault("Type", "YAML");
 			config.addDefault("Secure-Inventory", false);
 			config.addDefault("Add-Blindness", true);
+			
 			config.addDefault("mySQL.Host", "127.0.0.1");
 			config.addDefault("mySQL.Port", "3306");
 			config.addDefault("mySQL.Username", "mauth");
 			config.addDefault("mySQL.Password", "mauthpassword");
 			config.addDefault("mySQL.Table", "mauthtable");
+			
 			config.addDefault("Gamemode.Force-Survival", true);
 			config.addDefault("Gamemode.Clear-If-Creative", false);
+			
 			config.addDefault("Register.MinimumPasswordLength", 5);
-			config.addDefault("Register.Kick-If-Time-Reach", true);
-			config.addDefault("Register.Time-Kicking", 15);
 			config.addDefault("Register.Kick-After-Registering", true);
+			
 			config.addDefault("Login.Time-Login", 10);
 			config.addDefault("Login.Kick-If-Pass-Wrong", true);
 			config.addDefault("Login.Commands-Allow", new ArrayList<>());	
 			config.addDefault("Login.Allow-Chat", false);
+			
 			config.addDefault("Message.Login", "PLEASE LOGIN /LOGIN");
 			config.addDefault("Message.Register", "PLEASE REGISTER /REGISTER");
 			config.addDefault("Message.Kicked-Too-Much-Attempt", "YOU HAVE BEEN KICKED REASON: TOO MUCH ATTEMPT");
