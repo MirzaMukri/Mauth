@@ -51,32 +51,35 @@ public class SettingsData {
 			
 			file.createNewFile();
 			
-			config.addDefault("Type", "YAML");
-			config.addDefault("Secure-Inventory", false);
-			config.addDefault("Add-Blindness", true);
+			config.set("Type", "YAML");
+			config.set("Secure-Inventory", false);
+			config.set("Add-Blindness", true);
 			
-			config.addDefault("mySQL.Host", "127.0.0.1");
-			config.addDefault("mySQL.Port", "3306");
-			config.addDefault("mySQL.Username", "mauth");
-			config.addDefault("mySQL.Password", "mauthpassword");
-			config.addDefault("mySQL.Table", "mauthtable");
+			config.set("mySQL.Host", "127.0.0.1");
+			config.set("mySQL.Port", "3306");
+			config.set("mySQL.Username", "mauth");
+			config.set("mySQL.Password", "mauthpassword");
+			config.set("mySQL.Table", "mauthtable");
 			
-			config.addDefault("Gamemode.Force-Survival", true);
-			config.addDefault("Gamemode.Clear-If-Creative", false);
+			config.set("Gamemode.Force-Survival", true);
+			config.set("Gamemode.Clear-If-Creative", false);
 			
-			config.addDefault("Register.MinimumPasswordLength", 5);
-			config.addDefault("Register.Kick-After-Registering", true);
+			config.set("Register.MinimumPasswordLength", 5);
+			config.set("Register.Kick-After-Registering", true);
 			
-			config.addDefault("Login.Time-Login", 10);
-			config.addDefault("Login.Kick-If-Pass-Wrong", true);
-			config.addDefault("Login.Commands-Allow", new ArrayList<>());	
-			config.addDefault("Login.Allow-Chat", false);
+			config.set("Login.Time-Login", 10);
+			config.set("Login.Kick-If-Pass-Wrong", true);
+			config.set("Login.Commands-Allow", new ArrayList<>());	
+			config.set("Login.Allow-Chat", false);
 			
-			config.addDefault("Message.Login", "PLEASE LOGIN /LOGIN");
-			config.addDefault("Message.Register", "PLEASE REGISTER /REGISTER");
-			config.addDefault("Message.Kicked-Too-Much-Attempt", "YOU HAVE BEEN KICKED REASON: TOO MUCH ATTEMPT");
-			config.addDefault("Message.Kicked-Time-Limit", "YOU HAVE BEEN KICKED REASON: TIME ENDS!");
-			config.addDefault("Message.Successfull-Login", new ArrayList<>());
+			config.set("Message.Login", "&a&lMAUTH &7PLEASE LOGIN /LOGIN");
+			config.set("Message.Register", "&a&lMAUTH &7PLEASE REGISTER /REGISTER");
+			config.set("Message.Kicked-Too-Much-Attempt", "&a&lMAUTH &7YOU HAVE BEEN KICKED\n &cREASON: &7TOO MUCH ATTEMPT");
+			config.set("Message.Kicked-Time-Limit", "&a&lMAUTH &7YOU HAVE BEEN KICKED\n &cREASON: &7TIME ENDS!");
+			config.set("Message.Successfull-Login", "&a&lMAUTH &7You successfully logged in!");
+			config.set("Message.Successfull-Register", "&a&lMAUTH &7You set your password to &a{PASSWORD}");
+			config.set("Message.Error-Lenght", "&a&lMAUTH &7Your password have to be longer than 5!");
+			config.set("Message.Error-Invalid", "&a&lMAUTH &7Your are not allowed to use that password!");
 			
 			save();
 			
@@ -84,5 +87,4 @@ public class SettingsData {
 			e.printStackTrace();
 		}
 	}
-
 }

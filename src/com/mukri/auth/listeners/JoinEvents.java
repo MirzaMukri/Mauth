@@ -29,7 +29,7 @@ public class JoinEvents implements Listener {
 	
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e) {
-		Player p = e.getPlayer();
+		final Player p = e.getPlayer();
 		PlayerData data = new PlayerData(p.getUniqueId().toString());
 		
 		if(plugin.settings.getConfig().getBoolean("Add-Blindness")) {
@@ -61,12 +61,13 @@ public class JoinEvents implements Listener {
 			
 			if(data.getPassword().equals("none")) {
 				plugin.notRegistered.add(p.getName());
+				p.sendMessage(Mauth.getIns().settings.getConfig().getString("Message.Register"));
 			}
 			
 		} else {
 			data.createPlayer(p);
 			plugin.notLogged.add(p.getName());
-			p.sendMessage("//YOU HAVE TO LOG IN FIRST");
+			p.sendMessage(Mauth.getIns().settings.getConfig().getString("Message.Login"));
 			
 			plugin.notRegistered.add(p.getName());
 		}
@@ -75,7 +76,9 @@ public class JoinEvents implements Listener {
 			
 			@Override
 			public void run() {
-				//TODO Kick players
+				if(Mauth.getIns().notLogged.contains(p.getName())) {
+					p.kickPlayer(Mauth.getIns().getConfig().getString("Message.Kicked-Time-Limit").replace("&", "¤"));
+				}
 				
 			}
 		}, 20*plugin.settings.getConfig().getInt("Login.Time-Login"));

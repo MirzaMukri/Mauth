@@ -32,7 +32,7 @@ public class LoginCmd implements CommandExecutor {
 		
 		if(cmd.getName().equalsIgnoreCase("login")) {
 			if(args.length < 1) {
-				p.sendMessage("//PLEASE DO LOGIN USING /LOGIN");
+				p.sendMessage(Mauth.getIns().settings.getConfig().getString("Message.Login").replace("&", "¤"));
 			}
 			else if(args.length == 1) {
 				try {
@@ -44,14 +44,22 @@ public class LoginCmd implements CommandExecutor {
 							Mauth.getIns().notLogged.remove(p.getName());
 						}
 						
-						p.sendMessage("//YOU ARE NOW LOGGED IN!");
+						p.sendMessage(Mauth.getIns().settings.getConfig().getString("Message.Successfull-Login").replace("&", "¤"));
+						
+						if(Mauth.getIns().armor.containsKey(p.getName())) {
+							p.getInventory().setArmorContents(Mauth.getIns().armor.get(p.getName()));
+						}
+						
+						if(Mauth.getIns().inventory.containsKey(p.getName())) {
+							p.getInventory().setContents(Mauth.getIns().inventory.get(p.getName()));
+						}
 					}
 				} catch (UnsupportedEncodingException e) {
 					e.printStackTrace();
 				}
 				
 			} else {
-				p.sendMessage("///LOGIN [PASS]");
+				p.sendMessage(Mauth.getIns().settings.getConfig().getString("Message.Login").replace("&", "¤"));
 			}
 		}
 		
